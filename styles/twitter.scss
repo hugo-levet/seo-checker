@@ -99,7 +99,8 @@
   }
 
   &.summary_large_image {
-    height: 260px;
+    // should be height: 260px; but twitter uses 272px
+    height: 272px;
 
     & + .link {
       font-family: TwitterChirp, -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -109,7 +110,8 @@
     }
 
     img {
-      aspect-ratio: 2/1;
+      // should be aspect-ratio: 2/1; but twitter uses 2500/1310
+      aspect-ratio: 2500/1310;
     }
 
     .text {
