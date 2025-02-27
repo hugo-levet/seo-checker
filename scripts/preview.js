@@ -71,7 +71,14 @@ async function generateTweetPreview(url, preview) {
 
     let title = document.createElement("div");
     title.className = "title";
-    title.innerText = twitterData["twitter:title"];
+    if (twitterData["twitter:card"] == "summary_large_image") {
+      let titleSpan = document.createElement("span");
+      titleSpan.innerText = twitterData["twitter:title"];
+      title.appendChild(titleSpan);
+    } else {
+      title.innerText = twitterData["twitter:title"];
+    }
+
     text.appendChild(title);
 
     // TODO limit size of description

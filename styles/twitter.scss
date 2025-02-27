@@ -119,6 +119,7 @@
       bottom: 12px;
       left: 12px;
       right: 12px;
+      flex-direction: row;
 
       .link,
       .description {
@@ -138,6 +139,13 @@
         padding-right: 8px;
         border-radius: 4px;
         line-height: 16px;
+        min-width: 0px;
+
+        span {
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+        }
       }
     }
   }
