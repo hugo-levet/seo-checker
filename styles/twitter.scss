@@ -99,7 +99,7 @@
   }
 
   &.summary_large_image {
-    height: 272px;
+    height: 260px;
 
     & + .link {
       font-family: TwitterChirp, -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -109,7 +109,7 @@
     }
 
     img {
-      aspect-ratio: 2500/1310;
+      aspect-ratio: 2/1;
     }
 
     .text {
