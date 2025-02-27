@@ -16,6 +16,15 @@ if (isset($_GET['url'])) {
             }
         }
 
+        // Try again with property attribute and add only if not already set
+        foreach ($metaTags as $meta) {
+            $name = $meta->getAttribute('property');
+            if (strpos($name, 'twitter:') === 0) {
+                if (!isset($twitterMeta[$name]))
+                    $twitterMeta[$name] = $meta->getAttribute('content');
+            }
+        }
+
         if (!empty($twitterMeta)) {
             echo json_encode($twitterMeta);
         } else {
