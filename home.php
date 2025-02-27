@@ -13,10 +13,20 @@
     </p>
     <div>
         <code>twitter:card</code>
-        <a href="/twitter_card_summary"><code>summary</code></a>
-        <a href="#"><code>summary_large_image</code> (not implemented yet)</a>
-        <a href="#"><code>player</code> (not implemented yet)</a>
-        <a href="#"><code>app</code> (not implemented yet)</a>
+        <ul>
+            <li>
+                <a href="/twitter_card_summary"><code>summary</code></a>
+            </li>
+            <li>
+                <a href="#"><code>summary_large_image</code> (not implemented yet)</a>
+            </li>
+            <li>
+                <a href="#"><code>player</code> (not implemented yet)</a>
+            </li>
+            <li>
+                <a href="#"><code>app</code> (not implemented yet)</a>
+            </li>
+        </ul>
     </div>
 </body>
 
