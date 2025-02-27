@@ -28,6 +28,14 @@ if (isset($_GET['url'])) {
             }
         }
 
+        // sanitize output
+        foreach ($twitterMeta as $key => $value) {
+            $twitterMeta[$key] = htmlspecialchars($value);
+            $twitterMeta[$key] = mb_convert_encoding($twitterMeta[$key], 'UTF-8');
+            $twitterMeta[$key] = preg_replace('/[\x00-\x1F\x80-\xFF]/', '', $twitterMeta[$key]);
+            $twitterMeta[$key] = preg_replace('/\s+/', ' ', $twitterMeta[$key]);
+        }
+
         if (!empty($twitterMeta)) {
             echo json_encode($twitterMeta);
         } else {
