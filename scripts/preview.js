@@ -6,6 +6,9 @@ function getDomain(url) {
   if (index > 0) {
     domain = domain.substr(0, index);
   }
+  if (domain.startsWith("www.")) {
+    domain = domain.substr(4);
+  }
   return domain;
 }
 
