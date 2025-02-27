@@ -14,6 +14,7 @@
     <meta name="twitter:description" content="This is a test for Twitter Card Summary.">
     <meta name="twitter:image" content="<?= BASE_URL ?>/images/card_summary.png">
     <meta name="twitter:image:alt" content="Twitter Card Summary">
+
     <link rel="stylesheet" href="/styles/twitter.min.css">
 </head>
 
@@ -23,7 +24,7 @@
             Summary</a></p>
     <p>Here is a preview of the Twitter Card Summary:</p>
     <div class="preview-container">
-        <a class="twitter-card" href="" target="_blank">
+        <a class="twitter-card summary" href="" target="_blank">
             <img src="<?= BASE_URL ?>/images/card_summary.png" alt="Twitter Card Summary">
             <div class="text">
                 <div class="link">seo-checker.link</div>
