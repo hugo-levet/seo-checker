@@ -13,7 +13,7 @@
     </p>
     <div>
         <code>twitter:card</code>
-        <a href="/twitter_card_summary.html"><code>summary</code></a>
+        <a href="/twitter_card_summary"><code>summary</code></a>
         <a href="#"><code>summary_large_image</code> (not implemented yet)</a>
         <a href="#"><code>player</code> (not implemented yet)</a>
         <a href="#"><code>app</code> (not implemented yet)</a>

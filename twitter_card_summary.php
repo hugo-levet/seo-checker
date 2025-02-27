@@ -1,3 +1,5 @@
+<?php require_once 'config.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +12,7 @@
     <meta name="twitter:creator" content="@hugolevet_pro">
     <meta name="twitter:title" content="Twitter Card Summary">
     <meta name="twitter:description" content="This is a test for Twitter Card Summary.">
-    <meta name="twitter:image" content="/images/card_summary.png">
+    <meta name="twitter:image" content="<?= BASE_URL ?>/images/card_summary.png">
     <meta name="twitter:image:alt" content="Hugo Levet Logo">
 </head>
 
