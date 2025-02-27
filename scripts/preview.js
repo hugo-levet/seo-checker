@@ -83,8 +83,10 @@ async function generateTweetPreview(url, preview) {
     }
     imageContainer.appendChild(image);
 
-    let svgPlay = generatePLaySvg();
-    imageContainer.appendChild(svgPlay);
+    if (twitterData["twitter:card"] == "player") {
+      let svgPlay = generatePLaySvg();
+      imageContainer.appendChild(svgPlay);
+    }
 
     let text = document.createElement("div");
     text.className = "text";
