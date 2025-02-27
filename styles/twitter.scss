@@ -1,0 +1,40 @@
+.preview-container {
+  padding: 30px 15px;
+  background-color: #000000;
+}
+
+.twitter-card {
+  transition-duration: 0.2s;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgb(47, 51, 54);
+  text-decoration: none;
+  color: rgb(231, 233, 234);
+  font-family: TwitterChirp, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
+  display: flex;
+  flex-direction: row;
+  height: 130px;
+  width: 520px;
+  font-size: 15px;
+  font-weight: 400;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.03);
+  }
+
+  .text {
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2px;
+
+    .link,
+    .description {
+      color: rgb(113, 118, 123);
+      font-size: 15px;
+      font-weight: 400;
+    }
+  }
+}
