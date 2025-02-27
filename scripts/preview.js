@@ -76,8 +76,12 @@ async function generateTweetPreview(url, preview) {
     if (twitterData["twitter:image"]) {
       image.src = twitterData["twitter:image"];
     } else {
-      // TODO add default image
+      image.src = "/images/default.png";
     }
+    image.onerror = function () {
+      this.onerror = null;
+      this.src = "/images/default.png";
+    };
     if (twitterData["twitter:image:alt"]) {
       image.alt = twitterData["twitter:image:alt"];
     }
