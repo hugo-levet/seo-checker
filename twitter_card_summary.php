@@ -25,7 +25,9 @@
     <p>Here is a preview of the Twitter Card Summary:</p>
     <div class="preview-container">
         <a class="twitter-card summary" href="" target="_blank">
-            <img src="<?= BASE_URL ?>/images/card_summary.png" alt="Twitter Card Summary">
+            <div class="image">
+                <img src="<?= BASE_URL ?>/images/card_summary.png" alt="Twitter Card Summary">
+            </div>
             <div class="text">
                 <div class="link">seo-checker.link</div>
                 <div class="title">Twitter Card Summary</div>

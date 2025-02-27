@@ -25,6 +25,30 @@ async function getTwitterData(url) {
     });
 }
 
+function generatePLaySvg() {
+  let svgPlay = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  svgPlay.setAttribute("class", "play");
+  svgPlay.setAttribute("viewBox", "0 0 60 61");
+  svgPlay.setAttribute("aria-hidden", "true");
+  let g = document.createElementNS("http://www.w3.org/2000/svg", "g");
+  svgPlay.appendChild(g);
+  let circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+  circle.setAttribute("cx", "30");
+  circle.setAttribute("cy", "30.4219");
+  circle.setAttribute("fill", "#333333");
+  circle.setAttribute("r", "30");
+  g.appendChild(circle);
+  let path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+  path.setAttribute(
+    "d",
+    "M22.2275 17.1971V43.6465L43.0304 30.4218L22.2275 17.1971Z"
+  );
+  path.setAttribute("fill", "white");
+  g.appendChild(path);
+
+  return svgPlay;
+}
+
 async function generateTweetPreview(url, preview) {
   if (!preview) {
     preview = document.getElementById("preview");
@@ -44,6 +68,10 @@ async function generateTweetPreview(url, preview) {
     card.target = "_blank";
     preview.appendChild(card);
 
+    let imageContainer = document.createElement("div");
+    imageContainer.className = "image";
+    card.appendChild(imageContainer);
+
     let image = document.createElement("img");
     if (twitterData["twitter:image"]) {
       image.src = twitterData["twitter:image"];
@@ -53,7 +81,10 @@ async function generateTweetPreview(url, preview) {
     if (twitterData["twitter:image:alt"]) {
       image.alt = twitterData["twitter:image:alt"];
     }
-    card.appendChild(image);
+    imageContainer.appendChild(image);
+
+    let svgPlay = generatePLaySvg();
+    imageContainer.appendChild(svgPlay);
 
     let text = document.createElement("div");
     text.className = "text";

@@ -45,7 +45,7 @@
                 <a href="/twitter_card_summary_large_image"><code>summary_large_image</code></a>
             </li>
             <li>
-                <a href="#"><code>player</code> (not implemented yet)</a>
+                <a href="/twitter_card_player"><code>player</code></a>
             </li>
             <li>
                 <a href="#"><code>app</code> (not implemented yet)</a>

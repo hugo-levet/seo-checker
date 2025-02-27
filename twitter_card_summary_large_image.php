@@ -25,7 +25,9 @@
     <p>Here is a preview of the Twitter Card Summary with Large Image:</p>
     <div class="preview-container">
         <a class="twitter-card summary_large_image" href="" target="_blank">
-            <img src="<?= BASE_URL ?>/images/card_summary_large_image.png" alt="Twitter Card Summary with Large Image">
+            <div class="image">
+                <img src="<?= BASE_URL ?>/images/card_summary_large_image.png" alt="Twitter Card Summary with Large Image">
+            </div>
             <div class="text">
                 <div class="title">Twitter Card Summary with Large Image</div>
                 <div class="description">This is a test for Twitter Card Summary with Large Image.</div>
