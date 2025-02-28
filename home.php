@@ -46,7 +46,7 @@
                 <a href="/twitter_card_player"><code>player</code></a>
             </li>
             <li>
-                <a href="#"><code>app</code> (not implemented yet)</a>
+                <a href="/twitter_card_app"><code>app</code></a>
             </li>
         </ul>
     </div>

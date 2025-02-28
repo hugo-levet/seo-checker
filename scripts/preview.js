@@ -78,7 +78,9 @@ function generateTweetPreviewFromData(data, preview) {
     card.appendChild(imageContainer);
 
     let image = document.createElement("img");
-    if (data["twitter:image"]) {
+    if (data["app:image"]) {
+      image.src = data["app:image"];
+    } else if (data["twitter:image"]) {
       image.src = data["twitter:image"];
     } else {
       image.src = "/images/default.png";
@@ -101,26 +103,29 @@ function generateTweetPreviewFromData(data, preview) {
     text.className = "text";
     card.appendChild(text);
 
-    let link = document.createElement("div");
-    link.className = "link";
-    link.innerText = getDomain(data.url);
-    if (data["twitter:card"] == "summary_large_image") {
-      link.innerText = "From " + link.innerText;
-      preview.appendChild(link);
-    } else {
-      text.appendChild(link);
+    if (data.url) {
+      let link = document.createElement("div");
+      link.className = "link";
+      link.innerText = getDomain(data.url);
+      if (data["twitter:card"] == "summary_large_image") {
+        link.innerText = "From " + link.innerText;
+        preview.appendChild(link);
+      } else {
+        text.appendChild(link);
+      }
     }
 
     let title = document.createElement("div");
     title.className = "title";
-    if (data["twitter:card"] == "summary_large_image") {
+    if (data["app:name"]) {
+      title.innerText = data["app:name"];
+    } else if (data["twitter:card"] == "summary_large_image") {
       let titleSpan = document.createElement("span");
       titleSpan.innerText = data["twitter:title"];
       title.appendChild(titleSpan);
     } else {
       title.innerText = data["twitter:title"];
     }
-
     text.appendChild(title);
 
     // TODO limit size of description
@@ -128,6 +133,24 @@ function generateTweetPreviewFromData(data, preview) {
     description.className = "description";
     description.innerText = data["twitter:description"];
     text.appendChild(description);
+
+    if (data["twitter:card"] == "app") {
+      let rating = document.createElement("div");
+      rating.className = "rating";
+      rating.innerText = "";
+      if (data["app:rating"]) {
+        rating.innerText += data["app:rating"] + "/5 stars";
+      }
+      if (data["app:rating"] && data["app:review:count"]) {
+        rating.innerText += " – ";
+      }
+      if (data["app:review:count"]) {
+        rating.innerText +=
+          parseInt(data["app:review:count"]).toLocaleString("en-US") +
+          " reviews";
+      }
+      text.appendChild(rating);
+    }
 
     return card;
   }
@@ -137,7 +160,7 @@ async function generateTweetPreviewFromUrl(url, preview = null) {
   let twitterData = await getTwitterData(url);
   console.log(twitterData);
 
-  generateTweetPreviewFromData({ twitterData, url: url }, preview);
+  generateTweetPreviewFromData({ ...twitterData, url: url }, preview);
 }
 
 function handlePreviewForm(event) {
