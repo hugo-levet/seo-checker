@@ -7,6 +7,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Twitter Card Validator</title>
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@hugolevet_pro">
+    <meta name="twitter:creator" content="@hugolevet_pro">
+    <meta name="twitter:title" content="Twitter Card Validator">
+    <meta name="twitter:description" content="This is a simple tool to validate Twitter Cards.">
+    <meta name="twitter:image" content="<?= BASE_URL ?>/images/seochecker.png">
+    <meta name="twitter:image:alt" content="Twitter Card Validator">
 
     <link rel="stylesheet" href="/styles/global.min.css">
     <link rel="stylesheet" href="/styles/tab.min.css">
