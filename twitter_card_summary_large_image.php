@@ -15,17 +15,29 @@
     <meta name="twitter:image" content="<?= BASE_URL ?>/images/card_summary_large_image.png">
     <meta name="twitter:image:alt" content="Twitter Card Summary with Large Image">
 
+    <link rel="stylesheet" href="/styles/global.min.css">
+    <link rel="stylesheet" href="/styles/example.min.css">
     <link rel="stylesheet" href="/styles/twitter.min.css">
 
     <script src="/scripts/preview.js"></script>
 </head>
 
 <body>
-    <p>This page is a test for Twitter Card Summary with Large Image.</p>
-    <p>Check this tweet to see the result in Twitter: <a href="https://twitter.com/hugolevet_pro" target="_blank">Twitter Card
-            Summary</a></p>
-    <p>Here is a preview of the Twitter Card Summary with Large Image:</p>
-    <div id="preview"></div>
+    <section id="intro">
+        <h1>Twitter Card Summary with Large Image</h1>
+
+        <p>
+            Here is what a preview looks like when <code>twitter:card</code> = <code>summary_large_image</code>.
+        </p>
+        <pre><code>&lt;meta name="twitter:card" content="summary_large_image"&gt;</code></pre>
+    </section>
+    <section>
+        <p>Here is a preview of the Twitter Card Summary with Large Image:</p>
+        <div id="preview"></div>
+    </section>
+    <section>
+        <p>Check out this tweet to see a summary card with large image in action: <a href="https://twitter.com/hugolevet_pro" target="_blank">Twitter Card Summary with Large Image</a></p>
+    </section>
 
     <script>
         generateTweetPreviewFromData({

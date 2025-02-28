@@ -11,7 +11,9 @@
     <link rel="stylesheet" href="/styles/global.min.css">
     <link rel="stylesheet" href="/styles/tab.min.css">
     <link rel="stylesheet" href="/styles/twitter.min.css">
+    <link rel="stylesheet" href="/styles/home.min.css">
 
+    <script src="/scripts/global.js"></script>
     <script src="/scripts/preview.js"></script>
     <script src="/scripts/tab.js"></script>
 </head>
@@ -53,16 +55,16 @@
             <div role="tabpanel" id="twitter-card" style="display: block;">
                 <ul>
                     <li>
-                        <code>summary</code>: <a href="/twitter_card_summary">check in details</a>
+                        <code>summary</code>: <a href="/twitter_card_summary" openOnNewWindow>check in details</a>
                     </li>
                     <li>
-                        <code>summary_large_image</code>: <a href="/twitter_card_summary_large_image">check in details</a>
+                        <code>summary_large_image</code>: <a href="/twitter_card_summary_large_image" openOnNewWindow>check in details</a>
                     </li>
                     <li>
-                        <code>player</code>: <a href="/twitter_card_player">check in details</a>
+                        <code>player</code>: <a href="/twitter_card_player" openOnNewWindow>check in details</a>
                     </li>
                     <li>
-                        <code>app</code>: <a href="/twitter_card_app">check in details</a>
+                        <code>app</code>: <a href="/twitter_card_app" openOnNewWindow>check in details</a>
                     </li>
                 </ul>
             </div>
