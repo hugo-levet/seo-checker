@@ -35,9 +35,6 @@
         <p>Here is a preview of the Twitter Card App:</p>
         <div id="preview"></div>
     </section>
-    <section>
-        <p>Check out this tweet to see an app card in action: <a href="https://twitter.com/hugolevet_pro" target="_blank">Twitter Card App</a></p>
-    </section>
 
     <script>
         generateTweetPreviewFromData({

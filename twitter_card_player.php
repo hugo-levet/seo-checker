@@ -36,7 +36,7 @@
         <div id="preview"></div>
     </section>
     <section>
-        <p>Check out this tweet to see a player card in action: <a href="https://twitter.com/hugolevet_pro" target="_blank">Twitter Card Player</a></p>
+        <p>Check out this tweet to see a player card in action: <a href="https://x.com/hugolevet_pro/status/1464278968106946573" target="_blank">Twitter Card Player</a></p>
     </section>
 
     <script>

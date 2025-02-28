@@ -36,7 +36,7 @@
         <div id="preview"></div>
     </section>
     <section>
-        <p>Check out this tweet to see a summary card with large image in action: <a href="https://twitter.com/hugolevet_pro" target="_blank">Twitter Card Summary with Large Image</a></p>
+        <p>Check out this tweet to see a summary card with large image in action: <a href="https://x.com/mywalletaccount/status/1798654618957930498" target="_blank">Twitter Card Summary with Large Image</a></p>
     </section>
 
     <script>
