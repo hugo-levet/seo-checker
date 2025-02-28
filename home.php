@@ -48,9 +48,7 @@
         <div class="tab-container">
             <header role="tablist">
                 <div role="tab" aria-controls="twitter-card" aria-selected="true">twitter:card</div>
-                <div role="tab" aria-controls="twitter-card">???</div>
-                <div role="tab" aria-controls="twitter-card">???</div>
-                <div role="tab" aria-controls="twitter-card">???</div>
+                <div role="tab" aria-controls="twitter-image">twitter:image</div>
             </header>
             <div role="tabpanel" id="twitter-card" style="display: block;">
                 <ul>
@@ -67,6 +65,15 @@
                         <code>app</code>: <a href="/twitter_card_app" openOnNewWindow>check in details</a>
                     </li>
                 </ul>
+            </div>
+            <div role="tabpanel" id="twitter-image">
+                <p>In the provided code, the images for different Twitter Card types are displayed with specific aspect ratios:</p>
+                <ul>
+                    <li><code>summary</code> and <code>player</code> The images are displayed with a 1:1 aspect ratio.</li>
+                    <li><code>summary_large_image</code> The images are displayed with a 2:1 aspect ratio. <em>However, you should account for some bleed area because the actual display ratio is a bit more square than 2:1.</em></li>
+                    <li><code>app</code> Image displayed for this type is directly fetched from the App Store. It's the icon of the app.</li>
+                </ul>
+                <p>This means that when designing images for these Twitter Cards, you should ensure that the images for summary and player are square, while the images for summary_large_image should be rectangular with a 2:1 ratio, keeping in mind the bleed area. No image is needed for the app type.</p>
             </div>
         </div>
     </section>
