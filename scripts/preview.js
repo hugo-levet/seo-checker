@@ -58,6 +58,14 @@ async function generateTweetPreview(url, preview) {
   let twitterData = await getTwitterData(url);
   console.log(twitterData);
 
+  if (!twitterData["twitter:card"]) {
+    let card = document.createElement("div");
+    card.className = "twitter-card";
+    card.innerText = "No Twitter Card found";
+    preview.appendChild(card);
+    return card;
+  }
+
   if (twitterData) {
     let card = document.createElement("a");
     card.className = "twitter-card";
