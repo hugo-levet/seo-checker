@@ -49,16 +49,13 @@ function generatePLaySvg() {
   return svgPlay;
 }
 
-async function generateTweetPreview(url, preview) {
+function generateTweetPreviewFromData(data, preview) {
   if (!preview) {
     preview = document.getElementById("preview");
   }
   preview.innerHTML = "";
 
-  let twitterData = await getTwitterData(url);
-  console.log(twitterData);
-
-  if (!twitterData["twitter:card"]) {
+  if (!data["twitter:card"]) {
     let card = document.createElement("div");
     card.className = "twitter-card";
     card.innerText = "No Twitter Card found";
@@ -66,13 +63,13 @@ async function generateTweetPreview(url, preview) {
     return card;
   }
 
-  if (twitterData) {
+  if (data) {
     let card = document.createElement("a");
     card.className = "twitter-card";
-    if (twitterData["twitter:card"]) {
-      card.className += " " + twitterData["twitter:card"];
+    if (data["twitter:card"]) {
+      card.className += " " + data["twitter:card"];
     }
-    card.href = url;
+    card.href = data.url;
     card.target = "_blank";
     preview.appendChild(card);
 
@@ -81,8 +78,8 @@ async function generateTweetPreview(url, preview) {
     card.appendChild(imageContainer);
 
     let image = document.createElement("img");
-    if (twitterData["twitter:image"]) {
-      image.src = twitterData["twitter:image"];
+    if (data["twitter:image"]) {
+      image.src = data["twitter:image"];
     } else {
       image.src = "/images/default.png";
     }
@@ -90,12 +87,12 @@ async function generateTweetPreview(url, preview) {
       this.onerror = null;
       this.src = "/images/default.png";
     };
-    if (twitterData["twitter:image:alt"]) {
-      image.alt = twitterData["twitter:image:alt"];
+    if (data["twitter:image:alt"]) {
+      image.alt = data["twitter:image:alt"];
     }
     imageContainer.appendChild(image);
 
-    if (twitterData["twitter:card"] == "player") {
+    if (data["twitter:card"] == "player") {
       let svgPlay = generatePLaySvg();
       imageContainer.appendChild(svgPlay);
     }
@@ -106,8 +103,8 @@ async function generateTweetPreview(url, preview) {
 
     let link = document.createElement("div");
     link.className = "link";
-    link.innerText = getDomain(url);
-    if (twitterData["twitter:card"] == "summary_large_image") {
+    link.innerText = getDomain(data.url);
+    if (data["twitter:card"] == "summary_large_image") {
       link.innerText = "From " + link.innerText;
       preview.appendChild(link);
     } else {
@@ -116,12 +113,12 @@ async function generateTweetPreview(url, preview) {
 
     let title = document.createElement("div");
     title.className = "title";
-    if (twitterData["twitter:card"] == "summary_large_image") {
+    if (data["twitter:card"] == "summary_large_image") {
       let titleSpan = document.createElement("span");
-      titleSpan.innerText = twitterData["twitter:title"];
+      titleSpan.innerText = data["twitter:title"];
       title.appendChild(titleSpan);
     } else {
-      title.innerText = twitterData["twitter:title"];
+      title.innerText = data["twitter:title"];
     }
 
     text.appendChild(title);
@@ -129,11 +126,18 @@ async function generateTweetPreview(url, preview) {
     // TODO limit size of description
     let description = document.createElement("div");
     description.className = "description";
-    description.innerText = twitterData["twitter:description"];
+    description.innerText = data["twitter:description"];
     text.appendChild(description);
 
     return card;
   }
+}
+
+async function generateTweetPreviewFromUrl(url, preview = null) {
+  let twitterData = await getTwitterData(url);
+  console.log(twitterData);
+
+  generateTweetPreviewFromData({ twitterData, url: url }, preview);
 }
 
 function handlePreviewForm(event) {
@@ -141,5 +145,5 @@ function handlePreviewForm(event) {
 
   let url = document.getElementById("url").value;
 
-  generateTweetPreview(url);
+  generateTweetPreviewFromUrl(url);
 }

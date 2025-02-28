@@ -26,9 +26,7 @@
         <button type="submit">Preview</button>
     </form>
 
-    <div id="preview">
-
-    </div>
+    <div id="preview"></div>
 
     <h2>Twitter Card Summary</h2>
 

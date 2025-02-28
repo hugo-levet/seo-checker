@@ -16,6 +16,8 @@
     <meta name="twitter:image:alt" content="Twitter Card Summary">
 
     <link rel="stylesheet" href="/styles/twitter.min.css">
+
+    <script src="/scripts/preview.js"></script>
 </head>
 
 <body>
@@ -23,18 +25,20 @@
     <p>Check this tweet to see the result in Twitter: <a href="https://twitter.com/hugolevet_pro" target="_blank">Twitter Card
             Summary</a></p>
     <p>Here is a preview of the Twitter Card Summary:</p>
-    <div class="preview-container">
-        <a class="twitter-card summary" href="" target="_blank">
-            <div class="image">
-                <img src="<?= BASE_URL ?>/images/card_summary.png" alt="Twitter Card Summary">
-            </div>
-            <div class="text">
-                <div class="link">seo-checker.link</div>
-                <div class="title">Twitter Card Summary</div>
-                <div class="description">This is a test for Twitter Card Summary.</div>
-            </div>
-        </a>
-    </div>
+    <div id="preview"></div>
+
+    <script>
+        generateTweetPreviewFromData({
+            "twitter:card": "summary",
+            "twitter:site": "@hugolevet_pro",
+            "twitter:creator": "@hugolevet_pro",
+            "twitter:title": "Twitter Card Summary",
+            "twitter:description": "This is a test for Twitter Card Summary.",
+            "twitter:image": "/images/card_summary.png",
+            "twitter:image:alt": "Twitter Card Summary",
+            "url": "<?= BASE_URL ?>/twitter_card_summary",
+        });
+    </script>
 </body>
 
 </html>
