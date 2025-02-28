@@ -1,0 +1,33 @@
+.tab-container {
+  border: 1px solid var(--color-primary);
+
+  > header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+
+    > div {
+      flex-grow: 1;
+      border-right: 1px solid var(--color-primary);
+      padding: 4px 8px;
+
+      &:not([aria-selected="true"]) {
+        border-bottom: 1px solid var(--color-primary);
+        cursor: pointer;
+
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.06);
+        }
+      }
+
+      &:last-of-type {
+        border-right: none;
+      }
+    }
+  }
+
+  > div {
+    display: none;
+  }
+}
