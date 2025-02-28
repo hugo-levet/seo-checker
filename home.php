@@ -77,6 +77,13 @@
             </div>
         </div>
     </section>
+    <section>
+        <p>The site evolves quickly based on user feedback. Feel free to share your suggestions and thoughts—I’ll implement them as best as I can! You can reach me via email or on Twitter.</p>
+        <div class="contact">
+            <a href="mailto:hugolevet.pro@gmail.com">hugolevet.pro@gmail.com</a>
+            <a href="https://x.com/hugolevet_pro">@hugolevet_pro</a>
+        </div>
+    </section>
 
     <script>
         generateTweetPreviewFromData({
