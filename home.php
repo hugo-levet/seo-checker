@@ -27,11 +27,16 @@
 
 <body>
     <section id="intro">
-        <h1>Twitter Card Validator</h1>
+        <div class="content">
+            <h1>Twitter Card Validator</h1>
 
-        <p>
-            This is a simple tool to validate Twitter Cards.
-        </p>
+            <p>
+                This is a simple tool to validate Twitter Cards.
+            </p>
+        </div>
+        <div class="ezvezuvboul">
+            <iframe src="https://bazar.hugolevet.fr/supportPreview/?source=seo-checker" frameborder="0"></iframe>
+        </div>
     </section>
 
     <section id="preview-from-url">

@@ -24,12 +24,17 @@
 
 <body>
     <section id="intro">
-        <h1>Twitter Card Summary with Large Image</h1>
+        <div class="content">
+            <h1>Twitter Card Summary with Large Image</h1>
 
-        <p>
-            Here is what a preview looks like when <code>twitter:card</code> = <code>summary_large_image</code>.
-        </p>
-        <pre><code>&lt;meta name="twitter:card" content="summary_large_image"&gt;</code></pre>
+            <p>
+                Here is what a preview looks like when <code>twitter:card</code> = <code>summary_large_image</code>.
+            </p>
+            <pre><code>&lt;meta name="twitter:card" content="summary_large_image"&gt;</code></pre>
+        </div>
+        <div class="ezvezuvboul">
+            <iframe src="https://bazar.hugolevet.fr/supportPreview/?source=seo-checker" frameborder="0"></iframe>
+        </div>
     </section>
     <section>
         <p>Here is a preview of the Twitter Card Summary with Large Image:</p>

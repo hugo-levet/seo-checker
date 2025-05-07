@@ -24,12 +24,17 @@
 
 <body>
     <section id="intro">
-        <h1>Twitter Card Player</h1>
+        <div class="content">
+            <h1>Twitter Card Player</h1>
 
-        <p>
-            Here is what a preview looks like when <code>twitter:card</code> = <code>player</code>.
-        </p>
-        <pre><code>&lt;meta name="twitter:card" content="player"&gt;</code></pre>
+            <p>
+                Here is what a preview looks like when <code>twitter:card</code> = <code>player</code>.
+            </p>
+            <pre><code>&lt;meta name="twitter:card" content="player"&gt;</code></pre>
+        </div>
+        <div class="ezvezuvboul">
+            <iframe src="https://bazar.hugolevet.fr/supportPreview/?source=seo-checker" frameborder="0"></iframe>
+        </div>
     </section>
     <section>
         <p>Here is a preview of the Twitter Card Player:</p>

@@ -171,15 +171,33 @@ body {
 }
 
 #intro {
-  padding-bottom: 40px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
 
-  pre {
-    margin-inline: -10px;
+  > .content {
+    padding-bottom: 40px;
+
+    pre {
+      margin-inline: -10px;
+    }
+
+    &:has(pre) {
+      padding-bottom: 0;
+      border-bottom: none;
+    }
   }
 
-  &:has(pre) {
-    padding-bottom: 0;
-    border-bottom: none;
+  .ezvezuvboul {
+    margin: -10px -10px -10px 0;
+    border-left: 1px solid var(--color-primary);
+
+    iframe {
+      width: 300px;
+      max-width: 50svw;
+      height: 100%;
+      border: none;
+    }
   }
 }
 

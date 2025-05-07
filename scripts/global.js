@@ -4,7 +4,7 @@ function handleWindowClick(event) {
   window.open(
     url,
     "_blank",
-    "location=yes,height=720,width=640,scrollbars=yes,status=yes"
+    "location=yes,height=720,width=900,scrollbars=yes,status=yes"
   );
 }
 
