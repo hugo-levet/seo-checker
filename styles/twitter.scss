@@ -117,9 +117,13 @@
       font-size: 13px;
     }
 
-    img {
-      // should be aspect-ratio: 2/1; but twitter uses 2500/1310
-      aspect-ratio: 2500/1310;
+    .image {
+      width: 100%;
+
+      img {
+        // should be aspect-ratio: 2/1; but twitter uses 2500/1310
+        aspect-ratio: 2500/1310;
+      }
     }
 
     .text {
@@ -165,7 +169,6 @@
 
   .image {
     position: relative;
-    width: 100%;
 
     img {
       object-fit: cover;
