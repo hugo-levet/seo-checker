@@ -157,7 +157,9 @@ function generateTweetPreviewFromData(data, preview) {
 }
 
 async function generateTweetPreviewFromUrl(url, preview = null) {
+  addLoading();
   let twitterData = await getTwitterData(url);
+  removeLoading();
   console.log(twitterData);
 
   generateTweetPreviewFromData({ ...twitterData, url: url }, preview);
@@ -169,4 +171,64 @@ function handlePreviewForm(event) {
   let url = document.getElementById("url").value;
 
   generateTweetPreviewFromUrl(url);
+}
+
+function addLoading() {
+  const form = document
+    .getElementById("preview-from-url")
+    .querySelector("form");
+
+  if (!form) {
+    return;
+  }
+
+  const button = form.querySelector("button[type=submit]");
+
+  if (!button) {
+    return;
+  }
+
+  const fields = form.querySelectorAll("input, textarea, select, button");
+  fields.forEach((field) => field.setAttribute("disabled", "true"));
+
+  button.innerHTML = `Preview
+    <div class="loading-container">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>`;
+  button.classList.add("loading");
+
+  const preview = document.getElementById("preview");
+  if (preview) {
+    preview.classList.add("loading");
+  }
+}
+
+function removeLoading() {
+  const form = document
+    .getElementById("preview-from-url")
+    .querySelector("form");
+
+  if (!form) {
+    return;
+  }
+
+  const button = form.querySelector("button[type=submit]");
+
+  if (!button) {
+    return;
+  }
+
+  const fields = form.querySelectorAll("input, textarea, select, button");
+  fields.forEach((field) => field.removeAttribute("disabled"));
+
+  button.innerHTML = "Preview";
+  button.classList.remove("loading");
+
+  const preview = document.getElementById("preview");
+  if (preview) {
+    preview.classList.remove("loading");
+  }
 }

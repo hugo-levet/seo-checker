@@ -101,6 +101,55 @@ button {
   text-transform: uppercase;
   font-weight: 900;
   letter-spacing: 2px;
+
+  &.loading {
+    color: var(--color-primary);
+    position: relative;
+
+    div.loading-container {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      gap: 5px;
+      justify-content: center;
+      align-items: center;
+
+      div {
+        width: 15px;
+        height: 15px;
+        background-color: white;
+        animation: fadeInOut 4s infinite steps(1);
+
+        &:nth-child(1) {
+          animation-delay: 0s;
+        }
+        &:nth-child(2) {
+          animation-delay: 1s;
+        }
+        &:nth-child(3) {
+          animation-delay: 2s;
+        }
+        &:nth-child(4) {
+          animation-delay: 3s;
+        }
+      }
+    }
+  }
+}
+
+@keyframes fadeInOut {
+  10% {
+    background-color: var(--color-primary);
+  }
+  25% {
+    background-color: var(--color-primary);
+  }
+  26% {
+    background-color: white;
+  }
+  80% {
+    background-color: white;
+  }
 }
 
 code {
@@ -226,5 +275,48 @@ body {
   #preview {
     grid-column-start: 1;
     grid-column-end: 3;
+
+    &.loading {
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: #000;
+        z-index: 1;
+      }
+
+      &::after {
+        content: "Fetching and analyzing the page's SEO data";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-40svw, -50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 1.5rem;
+        font-weight: bold;
+        z-index: 1;
+        animation: dots 1.5s infinite;
+      }
+
+      @keyframes dots {
+        0% {
+          content: "Fetching and analyzing the page's SEO data.";
+        }
+        33% {
+          content: "Fetching and analyzing the page's SEO data..";
+        }
+        66% {
+          content: "Fetching and analyzing the page's SEO data...";
+        }
+        100% {
+          content: "Fetching and analyzing the page's SEO data.";
+        }
+      }
+    }
   }
 }
