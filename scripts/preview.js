@@ -69,8 +69,8 @@ function generateTweetPreviewFromData(data, preview) {
     if (data["twitter:card"]) {
       card.className += " " + data["twitter:card"];
     }
-    card.href = data.url;
-    card.target = "_blank";
+    card.href = data.url || document.location.href;
+    card.target = data.url ? "_blank" : "_self";
     preview.appendChild(card);
 
     let imageContainer = document.createElement("div");
